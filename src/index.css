@@ -2,7 +2,8 @@
 
 .sidebar{
     width: 500px;
-    min-height: 100vh;
+    height: 100vh;
+    padding-bottom: 4rem;
     background-color: aliceblue;
     position: absolute;
     top: 0;
@@ -29,4 +30,6 @@
 .backdrop-open{
     display: block;
 }
-
+.cs-overflow-y{
+    overflow: scroll;
+}
