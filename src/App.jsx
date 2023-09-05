@@ -5,6 +5,7 @@ import './App.css'
 import Header from './Components/Header'
 import Sidebar from './Components/Sidebar'
 import Backdrop from './Components/Backdrop'
+import Meals from './Components/Meals'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -14,9 +15,10 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='position-relative'>
         <Header handleShow={handleShow}/>
         <Backdrop handleShow={handleShow} show={show}/>
+        <Meals/>
         <Sidebar show={show}/>
 
       </div>
