@@ -7,8 +7,7 @@ const Meals = ({}) => {
     return (
         <div className='swiper-container'>
             <div className="my-4 d-flex flex-column justify-content-center align-items center text-center">
-                <h4 className="text-warning">Get The Best</h4>
-                <h2 className="display-3 fw-bold">Best Chickens</h2>         
+                <h2 className="fw-bold">Best Chickens</h2>         
             </div>
             <SwiperComponent meals={meals}/>
             

@@ -15,12 +15,11 @@ function App() {
 
   return (
     <>
-      <div className='position-relative'>
-        <Header handleShow={handleShow}/>
+      <div>
         <Backdrop handleShow={handleShow} show={show}/>
+        <Header handleShow={handleShow}/>
         <Meals/>
-        <Sidebar show={show}/>
-
+        <Sidebar show={show} handleShow={handleShow}/>
       </div>
 
     </>

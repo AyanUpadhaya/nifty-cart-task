@@ -53,7 +53,7 @@ const SwiperComponent = ({meals}) => {
             clickable: true,
         }}
         modules={[FreeMode,Pagination,Autoplay]}
-        className="mySwiper pb-3"
+        className="mySwiper"
       >
         {
             meals.map(meal=><SwiperSlide>

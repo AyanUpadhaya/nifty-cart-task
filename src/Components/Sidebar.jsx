@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../ProductsProvider/ProductsProvider";
 import { deleteFromDB, updateDB } from "../FakeDB/fakeDB";
 
-const Sidebar = ({ show }) => {
+const Sidebar = ({ show,handleShow }) => {
   const { cart, setCart, meals } = useContext(ProductsContext);
   const [totalQty, setTotalQty] = useState(
     cart.reduce((a, item) => a + item.qty, 0)
@@ -14,7 +14,6 @@ const Sidebar = ({ show }) => {
       if (obj.itemId === id) {
         return { ...obj, qty: obj.qty + 1 };
       }
-      // 👇️ otherwise return the object as is
       return obj;
     });
 
@@ -27,7 +26,6 @@ const Sidebar = ({ show }) => {
       if (obj.itemId === id) {
         return { ...obj, qty: obj.qty - 1 };
       }
-      // 👇️ otherwise return the object as is
       return obj;
     });
 
@@ -56,8 +54,8 @@ const Sidebar = ({ show }) => {
       <div className="row d-flex flex-column gap-3 ">
         <div className="p-2">
           <div className="d-flex justify-content-between align-items-center mb-5">
-            <h1 className="fw-bold mb-0 text-black">Shopping Cart</h1>
-            <h6 className="mb-0 text-muted">{cart?.length || 0} items</h6>
+            <h2 className="fw-bold mb-0 text-black">Shopping Cart({cart?.length || 0})</h2>
+            <button className="mb-0 btn" onClick={handleShow}>X</button>
           </div>
         </div>
 
@@ -69,7 +67,7 @@ const Sidebar = ({ show }) => {
               <div className="col-md-2 col-lg-2 col-xl-2">
                 <img src={product.strMealThumb} className="img-fluid" alt="" />
               </div>
-              <div className="col-md-3 col-lg-3 col-xl-3">
+              <div className="col-md-3 col-lg-3 col-xl-3 mb-2">
                 <h6 className="text-muted">{product.strMeal}</h6>
                 <h6 className="text-black ">Qty: {product.qty}</h6>
               </div>
@@ -93,12 +91,11 @@ const Sidebar = ({ show }) => {
               </div>
 
               <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h6 className="mb-0">${product.price}</h6>
+                <h6 className="mb-2">${product.price}</h6>
               </div>
               <div className="col-md-1 col-lg-1 col-xl-1 text-start">
                 <a
-                  href="#!"
-                  className="text-muted"
+                  className="btn btn-danger my-2"
                   onClick={() => handleRemoveFromCart(item.itemId)}
                 >
                   <i className="bi bi-x-lg"></i>
