@@ -1,1 +1,29 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+.sidebar{
+    width: 500px;
+    min-height: 100vh;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+    left:0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
+}
+.collapseSidebar{
+    transform: translateX(0%);
+}
+
+.backdrop{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.419);
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+    transition: all 0.1s ease-in-out;
+}
+.backdrop-open{
+    display: block;
+}

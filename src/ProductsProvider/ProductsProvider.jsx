@@ -4,8 +4,9 @@ export const ProductsContext = createContext(null)
 
 const ProductsProvider = ({children}) => {
     const [cart,setCart] = useState(loadDb)
+
     return (
-        <ProductsContext.Provider value={{cart}}>
+        <ProductsContext.Provider value={{cart,setCart}}>
             {children}
         </ProductsContext.Provider>
     );
