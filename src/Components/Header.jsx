@@ -1,6 +1,8 @@
+import { useContext } from "react";
+import { ProductsContext } from "../ProductsProvider/ProductsProvider";
 
 const Header = () => {
-    const cart = [];
+    const {cart} = useContext(ProductsContext);
     return (
         <div>
             <nav className={'navbar navbar-expand-lg bg-dark fixed-top w-100 text-white":"navbar navbar-expand-lg bg-dark w-100 text-white'}>
@@ -11,7 +13,7 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <form className="ms-auto">
-                            <a className="btn btn-lg btn-warning fw-bold rounded" to="/cart"><i class="bi bi-cart"></i><span>{cart.length}</span></a>
+                            <a className="btn btn-lg btn-warning fw-bold rounded" to="/cart"><i className="bi bi-cart fw-bold"></i><span>{cart.length}</span></a>
                         </form>
                     </div>
                 </div>
