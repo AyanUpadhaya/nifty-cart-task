@@ -16,10 +16,12 @@ function App() {
   return (
     <>
       <div>
-        <Backdrop handleShow={handleShow} show={show}/>
+        
         <Header handleShow={handleShow}/>
+        <Backdrop handleShow={handleShow} show={show}/>
         <Meals/>
         <Sidebar show={show} handleShow={handleShow}/>
+        
       </div>
 
     </>

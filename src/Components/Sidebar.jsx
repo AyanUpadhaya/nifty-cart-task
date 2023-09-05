@@ -58,7 +58,16 @@ const Sidebar = ({ show,handleShow }) => {
             <button className="mb-0 btn" onClick={handleShow}>X</button>
           </div>
         </div>
+        <div className="p-2">
+          <h3 className="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+          <hr className="my-2" />
+          <div className="d-flex justify-content-between mb-4">
+            <h5 className="text-uppercase">items {totalQty}</h5>
+            <h5>${totalPrice}</h5>
+          </div>
+        </div>
 
+        <div className="cs-overflow-y">
         {cart.map((item) => {
           const product = meals.find((meal) => meal.idMeal == item.itemId);
           product.qty = item.qty;
@@ -104,14 +113,6 @@ const Sidebar = ({ show,handleShow }) => {
             </div>
           );
         })}
-
-        <div className="p-2">
-          <h3 className="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-          <hr className="my-2" />
-          <div className="d-flex justify-content-between mb-4">
-            <h5 className="text-uppercase">items {totalQty}</h5>
-            <h5>${totalPrice}</h5>
-          </div>
         </div>
       </div>
     </div>
